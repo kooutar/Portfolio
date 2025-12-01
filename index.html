@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Kaoutar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div class="window-header">
+            <div class="window-buttons">
+                <div class="window-button close"></div>
+                <div class="window-button minimize"></div>
+                <div class="window-button maximize"></div>
+            </div>
+            <div class="window-title">kaoutar@portfolio: ~</div>
+        </div>
+        
+        <div id="terminal">
+            <div id="header-section" style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                <img id="profile-pic" src="profil.jfif" alt="Kaoutar Laajil" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #00ff6a; box-shadow: 0 0 20px rgba(0, 255, 106, 0.4); object-fit: cover;">
+                <div>
+                    <div class="ascii-art">
+      ╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   ██╗  ██╗ █████╗  ██████╗ ██╗   ██╗████████╗ █████╗ ██████╗    ║
+║   ██║ ██╔╝██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝██╔══██╗██╔══██╗   ║
+║   █████╔╝ ███████║██║   ██║██║   ██║   ██║   ███████║██████╔╝   ║
+║   ██╔═██╗ ██╔══██║██║   ██║██║   ██║   ██║   ██╔══██║██╔══██╗   ║
+║   ██║  ██╗██║  ██║╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║  ██║   ║
+║   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+                    </div>
+                </div>
+            </div>
+            <div id="welcome-section">
+                <div class="line">Welcome to <span class="name">kaoutar@portfolio</span></div>
+                <div class="line">Full-Stack Developer | Java Backend Specialist</div>
+                <div class="line">─────────────────────────────────────────────────</div>
+                <div class="line">Type <span class="highlight">'help'</span> to see available commands or <span class="highlight">'about'</span> to start.</div>
+                <div class="line typing-indicator">Ready<span>.</span><span>.</span><span>.</span></div>
+            </div>
+            <div id="output-section"></div>
+        </div>
+        
+        <div id="input-line">
+            <span class="prompt">guest@portfolio:~$</span>
+            <input type="text" id="input" autofocus autocomplete="off" spellcheck="false">
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
