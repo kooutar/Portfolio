@@ -49,6 +49,24 @@
             backdrop-filter: blur(10px);
         }
 
+        /* Header section (photo + ASCII) */
+        #header-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        #profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #00ff6a;
+            box-shadow: 0 0 20px rgba(0, 255, 106, 0.4);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
         .window-header {
             display: flex;
             align-items: center;
@@ -129,6 +147,9 @@
             color: #00d9ff;
             font-family: 'Courier New', monospace;
             white-space: pre;
+            font-size: 10px;
+            line-height: 1.1;
+            overflow-x: auto;
         }
 
         #input-line {
@@ -248,8 +269,49 @@
                 padding: 15px;
             }
 
+            #header-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            #profile-pic {
+                width: 90px;
+                height: 90px;
+            }
+
+            .ascii-art {
+                font-size: 8px;
+            }
+
             .skill-tag {
                 font-size: 12px;
                 padding: 3px 8px;
+            }
+
+            #terminal {
+                min-height: 300px;
+            }
+
+            #input {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+
+            #container {
+                padding: 12px;
+            }
+
+            .window-title {
+                font-size: 12px;
+            }
+
+            .line {
+                font-size: 14px;
             }
         }
