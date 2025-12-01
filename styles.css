@@ -260,6 +260,7 @@
             border-bottom: 1px solid #79c0ff;
         }
 
+       /* Responsive Design */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -267,51 +268,200 @@
 
             #container {
                 padding: 15px;
+                border-width: 1px;
             }
 
-            #header-section {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            #profile-pic {
-                width: 90px;
-                height: 90px;
-            }
-
-            .ascii-art {
-                font-size: 8px;
-            }
-
-            .skill-tag {
-                font-size: 12px;
-                padding: 3px 8px;
-            }
-
-            #terminal {
-                min-height: 300px;
-            }
-
-            #input {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 8px;
-            }
-
-            #container {
-                padding: 12px;
+            .window-header {
+                margin-bottom: 15px;
             }
 
             .window-title {
                 font-size: 12px;
             }
 
+            #header-section {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 15px !important;
+            }
+
+            #header-section img {
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .ascii-art {
+                font-size: 10px !important;
+            }
+
+            #terminal {
+                min-height: 300px;
+                font-size: 14px;
+            }
+
             .line {
                 font-size: 14px;
+                margin: 6px 0;
+            }
+
+            .prompt {
+                font-size: 14px;
+            }
+
+            #input {
+                font-size: 14px;
+            }
+
+            .skill-tag {
+                font-size: 11px;
+                padding: 3px 8px;
+                margin: 3px;
+            }
+
+            .project-item {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .output {
+                font-size: 14px;
+                padding-left: 10px;
+            }
+
+            .window-button {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            #container {
+                padding: 10px;
+                border-radius: 4px;
+            }
+
+            .window-header {
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+            }
+
+            .window-buttons {
+                gap: 6px;
+            }
+
+            .window-button {
+                width: 8px;
+                height: 8px;
+            }
+
+            .window-title {
+                font-size: 11px;
+            }
+
+            #header-section {
+                gap: 10px !important;
+            }
+
+            #header-section img {
+                width: 80px !important;
+                height: 80px !important;
+                border-width: 2px;
+            }
+
+            .ascii-art {
+                font-size: 8px !important;
+                line-height: 1.1;
+            }
+
+            #terminal {
+                min-height: 250px;
+                font-size: 13px;
+            }
+
+            .line {
+                font-size: 13px;
+                margin: 5px 0;
+            }
+
+            .prompt {
+                font-size: 12px;
+                margin-right: 5px;
+            }
+
+            #input {
+                font-size: 13px;
+            }
+
+            #input-line {
+                margin-top: 8px;
+            }
+
+            .skill-tag {
+                font-size: 10px;
+                padding: 2px 6px;
+                margin: 2px;
+            }
+
+            .project-item {
+                padding: 6px;
+                font-size: 13px;
+                margin: 8px 0;
+            }
+
+            .output {
+                font-size: 13px;
+                padding-left: 8px;
+            }
+
+            .highlight {
+                font-size: 13px;
+            }
+
+            a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            #header-section {
+                gap: 8px !important;
+            }
+
+            #header-section img {
+                width: 70px !important;
+                height: 70px !important;
+            }
+
+            .ascii-art {
+                font-size: 7px !important;
+            }
+
+            #terminal {
+                font-size: 12px;
+            }
+
+            .line {
+                font-size: 12px;
+            }
+
+            .prompt {
+                font-size: 11px;
+            }
+
+            #input {
+                font-size: 12px;
+            }
+
+            .skill-tag {
+                font-size: 9px;
+                padding: 2px 5px;
+            }
+
+            .project-item {
+                font-size: 12px;
             }
         }
