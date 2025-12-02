@@ -1,53 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Portfolio Kaoutar</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kaoutar Laajil - Portfolio HyperStylé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="container">
-        <div class="window-header">
-            <div class="window-buttons">
-                <div class="window-button close"></div>
-                <div class="window-button minimize"></div>
-                <div class="window-button maximize"></div>
-            </div>
-            <div class="window-title">kaoutar@portfolio: ~</div>
-        </div>
-        
-        <div id="terminal">
-            <div id="header-section">
-                <img id="profile-pic" src="profil.jfif" alt="Kaoutar Laajil">
-                <div>
-                    <div class="ascii-art">
-      ╔═══════════════════════════════════════════════════════════════════╗
-║                                                                   ║
-║   ██╗  ██╗ █████╗  ██████╗ ██╗   ██╗████████╗ █████╗ ██████╗    ║
-║   ██║ ██╔╝██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝██╔══██╗██╔══██╗   ║
-║   █████╔╝ ███████║██║   ██║██║   ██║   ██║   ███████║██████╔╝   ║
-║   ██╔═██╗ ██╔══██║██║   ██║██║   ██║   ██║   ██╔══██║██╔══██╗   ║
-║   ██║  ██╗██║  ██║╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║  ██║   ║
-║   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ║
-║                                                                   ║
-╚═══════════════════════════════════════════════════════════════════╝
-                    </div>
-                </div>
-            </div>
-            <div id="welcome-section">
-                <div class="line">Welcome to <span class="name">kaoutar@portfolio</span></div>
-                <div class="line">Full-Stack Developer | Java Backend Specialist</div>
-                <div class="line">─────────────────────────────────────────────────</div>
-                <div class="line">Type <span class="highlight">'help'</span> to see available commands or <span class="highlight">'about'</span> to start.</div>
-                <div class="line typing-indicator">Ready<span>.</span><span>.</span><span>.</span></div>
-            </div>
-            <div id="output-section"></div>
-        </div>
-        
-        <div id="input-line">
-            <span class="prompt">guest@portfolio:~$</span>
-            <input type="text" id="input" autofocus autocomplete="off" spellcheck="false">
-        </div>
+  <canvas class="matrix-bg"></canvas>
+
+  <header id="header" class="glass">
+    <img src="profil.jfif" alt="Photo de Kaoutar Laajil">
+    <h1>Kaoutar Laajil</h1>
+    <div class="subtitle-typing"></div>
+    <div class="header-quote">
+      Développeuse Full-Stack junior spécialisée en Java/Spring et Laravel, orientée performance,
+      qualité du code et travail en équipe. 
     </div>
-<script src="script.js"></script>
+  </header>
+
+  <main class="content-section">
+
+    <!-- A PROPOS -->
+    <section class="content-card glass">
+      <h2 class="content-title">👋 À Propos</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Passionnée par le développement d’applications web robustes, tu conçois et développes
+            des solutions centrées sur la performance, la lisibilité du code et l’expérience utilisateur. 
+          </p>
+          <p>
+            Formée à YOUCODE (développement web & mobile) après une licence en mathématiques et
+            informatique, tu combines rigueur académique et pratique projet. 
+          </p>
+          <div class="about-tags">
+            <span class="about-tag">Full-Stack Java / Laravel</span>
+            <span class="about-tag">Spring Boot & Spring Security</span>
+            <span class="about-tag">API REST & bases de données</span>
+            <span class="about-tag">Méthodes Agiles (Scrum)</span>
+          </div>
+        </div>
+
+        <!-- SKILLS SEPARES -->
+        <div>
+          <div class="skills-section-title">🧠 Compétences principales</div>
+          <div class="skills-grid">
+            <div class="skill">Java · Spring Boot · Spring Security </div>
+            <div class="skill">JUnit · Mockito · Liquibase · MapStruct </div>
+            <div class="skill">PHP · Laravel </div>
+            <div class="skill">MySQL · PostgreSQL · SQL </div>
+            <div class="skill">HTML · CSS · Tailwind · JavaScript · Angular </div>
+            <div class="skill">UML · Merise · MVC · POO </div>
+            <div class="skill">Trello · Jira · Microsoft Project · Scrum </div>
+            <div class="skill">Git · GitHub</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES / STAGES -->
+    <section class="content-card glass">
+      <h2 class="content-title">💼 Expériences & Stages</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Stage en développement web – Province de Safi</span>
+          <span class="exp-date">Mai 2025 – Juil 2025</span>
+        </div>
+        <div class="exp-body">
+          Conception et développement d’une application web pour la gestion complète d’un centre de formation
+          (stagiaires, formateurs, sessions, inscriptions). 
+        </div>
+        <div class="exp-tech">
+          Technologies : Laravel, MySQL. 
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Stage en développement web – ERYX</span>
+          <span class="exp-date">Juin 2022 – Juil 2022</span>
+        </div>
+        <div class="exp-body">
+          Participation au développement d’une application de gestion de location de voitures
+          (véhicules, réservations, clients). 
+        </div>
+        <div class="exp-tech">
+          Technologies : Laravel, MySQL. 
+        </div>
+      </div>
+
+     
+    </section>
+
+    <!-- PROJETS PHARES (AVEC IMAGES) -->
+    <section class="content-card glass">
+      <h2 class="content-title">🚀 Projets Phare</h2>
+      <div class="projects-grid">
+        <article class="project">
+          <img src="smartShop.jpg" alt="Aperçu du projet SmartShop" class="project-img">
+          <b>SmartShop</b><br>
+          Plateforme e‑commerce (API, gestion produits, commandes, paiements, fidélité). <br>
+          <a href="https://github.com/kooutar/smartshop" target="_blank">Voir sur GitHub →</a>
+        </article>
+
+        <article class="project">
+          <img src="tricol.jpg" alt="Aperçu du projet Tricol" class="project-img">
+          <b>Tricol</b><br>
+          Gestion des commandes fournisseurs, stocks et valorisation FIFO/CUMP. <br>
+          <a href="https://github.com/kooutar/fifo-cump" target="_blank">Voir sur GitHub →</a>
+        </article>
+
+        <article class="project">
+          <img src="eventify.jpg" alt="Aperçu du projet Eventify" class="project-img">
+          <b>Eventify</b><br>
+          Application de gestion d’événements sécurisée (rôles, droits, gestion événements). <br>
+          <a href="https://github.com/kooutar/eventify" target="_blank">Voir sur GitHub →</a>
+        </article>
+
+        <article class="project">
+          <img src="vibe3.png" alt="Aperçu du projet Vibe" class="project-img">
+          <b>Vibe</b><br>
+          Chat en temps réel multi-utilisateurs basé sur WebSockets et Laravel.<br>
+          <a href="https://github.com/kooutar/vibe2" target="_blank">Voir sur GitHub →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- OBJECTIFS -->
+    <section class="content-card glass">
+      <h2 class="content-title">🎯 Objectifs 2025</h2>
+      <ul>
+        <li>Maîtriser les architectures Microservices et Kubernetes.</li>
+        <li>Mettre en place des pipelines CI/CD complets.</li>
+        <li>Contribuer activement à des projets open source backend.</li>
+        <li>Explorer l’IA / ML et leur intégration dans des solutions métiers.</li>
+        <li>Créer des interfaces UI/UX plus innovantes et immersives.</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-card glass">
+      <h2 class="content-title">📬 Contact</h2>
+      <p>
+        Tu es intéressé(e) par un stage, une alternance ou un poste junior, ou tu veux échanger sur un projet&nbsp;?
+      </p>
+      <div class="socials">
+        <a href="mailto:kawtarlaajil7@gmail.com" title="Email">📧</a>
+        <a href="https://github.com/kooutar" target="_blank" title="GitHub">🐙</a>
+        <a href="https://www.linkedin.com/in/kaoutar-laajil-8b2473224/" target="_blank" title="LinkedIn">💼</a>
+      </div>
+    </section>
+
+    <div class="footer-quote">
+      <b>« Code is like humor. When you have to explain it, it's bad. » – Cory House</b><br>
+      <span>&copy; 2025 Kaoutar Laajil · Portfolio</span>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
