@@ -1,10 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --netflix-red: #e50914;
+  --netflix-dark: #141414;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-strong: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.06);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
+.light {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: rgba(0, 0, 0, 0.04);
+  --card-strong: rgba(0, 0, 0, 0.08);
+  --glass: rgba(0, 0, 0, 0.06);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-strong: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.06);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* Tailwind v4 theme configuration - using @theme inline for v4 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +37,215 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: linear-gradient(120deg, #e50914, #c11119, #b20710, #ff4f5a);
+  filter: blur(8px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.bg-grid {
+  background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 0
+    );
+  background-size: 80px 80px, 80px 80px;
+  background-position: 0 0, 40px 40px;
+  opacity: 0.08;
+}
+
+.animated-gradient {
+  background: radial-gradient(circle at 20% 20%, #1a1a1a, transparent 25%),
+    radial-gradient(circle at 80% 0%, #2b0004, transparent 28%),
+    radial-gradient(circle at 0% 50%, #0d0d0d, transparent 22%),
+    linear-gradient(120deg, #0c0c0c, #141414, #0d0a0a);
+  animation: pulseGradient 12s ease-in-out infinite alternate;
+}
+
+.floating-shape {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.28), transparent 60%);
+  filter: blur(18px);
+  animation: float 12s ease-in-out infinite;
+}
+
+.floating-shape:nth-child(2) {
+  width: 320px;
+  height: 320px;
+  left: 65%;
+  top: 10%;
+  animation-duration: 15s;
+}
+
+.floating-shape:nth-child(3) {
+  width: 260px;
+  height: 260px;
+  left: 10%;
+  top: 60%;
+  animation-duration: 18s;
+}
+
+.cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  background: radial-gradient(
+    280px circle at var(--x, 50%) var(--y, 50%),
+    rgba(229, 9, 20, 0.08),
+    transparent 45%
+  );
+  transition: background 0.2s ease;
+  z-index: 0;
+}
+
+.scrollbar::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(229, 9, 20, 0.4);
+  border-radius: 999px;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 40%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+.underline-animate {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animate::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #e50914, #ff3b3b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.underline-animate:hover::after {
+  transform: scaleX(1);
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 10%, transparent 35%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.5s ease;
+}
+
+.ripple:active::after {
+  transform: scale(3);
+  opacity: 1;
+}
+
+@keyframes pulseGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 60%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) translateX(12px) scale(1.05);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
 }
