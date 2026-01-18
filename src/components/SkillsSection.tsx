@@ -7,12 +7,15 @@ import { useLanguage } from "@/contexts/LanguageContext";
 type Skill = { name: string; level: number; icon: string; color: string };
 
 const skills: Skill[] = [
+  { name: "Java / Spring Boot", level: 90, icon: "☕", color: "#f89820" },
+  { name: "Spring Security", level: 85, icon: "🔐", color: "#6db33f" },
+  { name: "Angular", level: 88, icon: "🅰️", color: "#dd0031" },
   { name: "React / Next.js", level: 92, icon: "⚛️", color: "#61dafb" },
   { name: "TypeScript", level: 90, icon: "TS", color: "#3178c6" },
+  { name: "PHP / Laravel", level: 87, icon: "�", color: "#ff2d20" },
+  { name: "Docker", level: 84, icon: "🐳", color: "#2496ed" },
+  { name: "CI/CD", level: 82, icon: "�", color: "#00b4ab" },
   { name: "Node.js / APIs", level: 86, icon: "🟢", color: "#3c873a" },
-  { name: "GSAP / Motion", level: 88, icon: "🎞️", color: "#00ff9c" },
-  { name: "Design Systems", level: 84, icon: "💎", color: "#c084fc" },
-  { name: "Cloud / CI", level: 80, icon: "☁️", color: "#60a5fa" },
 ];
 
 export default function SkillsSection() {

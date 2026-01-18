@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import StatsSection from "@/components/StatsSection";
+
 import EducationSection from "@/components/EducationSection";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <ProjectsSection />
       <SkillsSection />
-      <StatsSection />
+    
       <EducationSection />
       <ContactSection />
     </main>

@@ -50,10 +50,7 @@ export default function ContactSection() {
             <Mail size={16} className="text-[#e50914]" />
             <span>kaoutar.laajil@example.com</span>
           </div>
-          <div className="flex gap-3 text-sm text-zinc-300">
-            <span className="rounded-full bg-white/5 px-3 py-1">Available for freelance</span>
-            <span className="rounded-full bg-white/5 px-3 py-1">Remote / Hybrid</span>
-          </div>
+         
         </div>
 
         <motion.form
